@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <title>Controller Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller = 'todoctrl'>
+<h3>My Todo List</h3>
+
+<form ng-submit="todoAdd()">
+        <input type="text" ng-model="todoinput">
+        <input type="submit" value="Add New">
+</form>
+<br>
+<div ng-repeat="x in todolist">
+    <input type="checkbox" ng-model="x.done">
+    <span ng-bind = "x.togostate"></span>
+</div>
+<br>
+<button ng-click="remove()">Remove Marked</button>
+
+<script src="example2.js"></script>
+</body>
+</html>

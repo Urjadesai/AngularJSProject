@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <title>Controller Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCntrl">
+
+<p ng-click="changename()">My Full Name is {{firstname +" "+lastname}} </p>
+
+<div ng-init="fname ='hallen'">
+    <p>Name:<input type="text" ng-model="fname"></p>
+    <span>{{fname}}</span>
+
+</div>
+
+<div ng-init = "names=['Hi','How', 'Are', 'You?']">
+    <ul>
+        <li ng-repeat ="x in names">
+            {{x}}
+        </li>
+    </ul>
+
+</div>
+
+<script>
+
+var app = angular.module("myApp", []);
+app.controller("myCntrl", function($scope)
+{
+    $scope.firstname = "Urja";
+    $scope.lastname = "Desai";
+
+    $scope.changename = function()
+    {
+        $scope.firstname = "Dev";
+    }
+}
+);
+
+
+</script>    
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html  ng-app="">
+<head>
+    <title>AngularJS Example</title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+
+    <div ng-init="fname='my name is  '">
+        <p>Input something in box</p>
+        <p>Name: <input type="text" ng-model = "name"> </p>
+        <span ng-bind="fname"></span><span ng-bind="name"></span><br>
+        <span ng-bind="fname"></span><span>{{name}}</span><br><br>
+        <p> my expression: {{5 + 5}}</p>
+    </div>
+    <div ng-init="myarrname = ['urja','amit','kai']">
+        <p>Repeat function with array</p>
+    <ul>
+        <li ng-repeat = "x in myarrname">{{ x }}</li>
+    </ul>
+    </div>
+
+    <div ng-init = "names=[
+    {ffname:'urja', country:'India'},
+    {ffname:'John', country:'USA'},
+    {ffname:'gal', country:'Italy'}]">
+    <p>Repeat function with object</p>
+    <ul>
+        <li ng-repeat = "y in names">{{y.ffname + ' , '+ y.country}}</li>
+    </ul>
+
+    </div>
+
+    <div ng-init="myswitch = true">
+
+        <button ng-disabled = "myswitch">Click Me!</button>
+
+        <p ng-show="true">I am Visible.</p>
+        <p ng-hide = "true"> I am not Visible</p>
+        <p ng-if = "true">I am Visible using ng-if</p>
+
+    </div>
+    <br><br>
+    <div ng-init="val = [{myname:'ojus', country1:'Aus'},{myname:'Mohan', country1:'USA'}, {myname:'Rick', country1:'canada'}]">
+            <p> filter Example</p>
+        name:<input type="text" ng-model='test'>
+       
+        <ul>
+            <li ng-repeat = "a in val | orderBy:name">{{a.myname + ", " + a.country1}}</li>
+            <li ng-repeat = "a in val | filter:test">
+                {{a.myname + ", " + a.country1}}
+            </li>
+        </ul>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <title>Two Way Controller</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+</head>
+<body ng-app="myApp">
+
+    <div ng-controller = 'mainCtrl'>
+        <h3>{{name}}</h3>
+    
+    </div>
+    <div ng-controller = 'secondCtrl'>
+
+        <input type="text" ng-model='name'>
+        <button ng-click='handleclick(name)'>Click</button>
+    </div>
+
+<!-- </div> -->
+    <script src="twowaycontroller.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<body>
+
+    <side-bar></side-bar>
+   <div side-bar></div>
+    <div class="side-bar"></div>
+   
+    <script>
+        var app = angular.module("myApp", []);
+        app.directive("sideBar", function(){
+            return{
+                restrict : "AEC",
+                template : '<h4>{{item}}</h4>',
+                replace : true,
+
+                controller:function($scope)
+                {
+                    $scope.item='item'
+                }
+            };
+        });
+    </script>
+
+
+</body>
+</html>

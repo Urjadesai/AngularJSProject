@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<body>
+
+    <div ng-controller='mainCtrl'>
+   
+    <side-bar user='user1'></side-bar>
+    <side-bar user='user2'></side-bar>
+</div>
+    <script>
+
+        var app = angular.module('myApp', []);
+        app.controller('mainCtrl', function($scope)
+        {
+            $scope.user1= {name: 'john', age: 20},
+            $scope.user2={name:'kai', age:30}
+        });
+
+        app.directive('sideBar', function()
+        {
+            return{
+                restrict: 'ACE',
+                template: '<div><span>{{user.name}}</span><span>{{user.age}}</span></div>',
+                //replace: true,
+                scope: {
+                    user: '='
+                }
+            }
+        });
+    </script>
+</body>
+</html>

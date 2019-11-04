@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <title>Form validation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> 
+</head>
+<body ng-app="">
+    <h3>Form validation Example.</h3>
+    <form name="myform" novalidate>
+        <p>Name:
+        <input type="text" name="myname" ng-model = "myname" required>
+        <span ng-if = "myform.myname.$invalid && myform.myname.$dirty">Name is required</span>
+        </p>
+
+        <p>Address:
+        <input type="text" name="myadd" ng-model = "myadd" ng-pattern="/[a-zA-Z]/" ng-maxlength='2' required>
+        <div ng-if="myform.$invalid && myform.$dirty">
+            <span ng-if= "myform.myadd.$invalid && myform.myadd.$error.required">Field required</span>
+            <span ng-if = "myform.myadd.$invalid && myform.myadd.$error.pattern ">character only </span>
+            <span ng-if = "myform.myadd.$invalid && myform.myadd.$error.maxlength">Enter atleast 2 char</span>
+        </div>
+        
+        </p>
+
+        <p>Phone No:
+            <input type="number" name="myphone" ng-model="myphone" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/" required>
+            <!-- <span ng-if = "myform.myphone.$invalid  && myform.myphone.$error.maxlength">Enter atleast 10 number</span> -->
+            <span ng-if = "myform.myphone.$invalid && myform.myphone.$error.pattern">Enter valid 10 digit number</span> 
+        </p>
+
+        
+               
+                
+                
+       
+    </form>
+
+
+</body>
+</html>

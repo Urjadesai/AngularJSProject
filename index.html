@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <title>RoutingExample</title>
+    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+  <!-- <link data-require="bootstrap-css@*" data-semver="2.3.2" rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" /> -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+</head>
+<body ng-app="myApp">
+
+        <nav class="navbar navbar-dark bg-info">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Pro-Tek Tutorials</a>
+                  </div>
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="#!HOME">HOME</a></li>
+                    <li class="active"><a href="#!HTML">HTML</a></li>
+                    <li class="active"><a href="#!CSS">CSS</a></li>
+                    <!-- <li class="active"><a href="#">JAVASCRIPT</a></li>
+                    <li class="active"><a href="#">JSON/AJAX</a></li>
+                    <li class="active"><a href="#">JQUERY</a></li>
+                    <li class="active"><a href="#">ANGULARJS</a></li>
+                    <li class="active"><a href="#">ANGULARJS-2</a></li> -->
+                  </ul>
+                </div>
+              </nav>
+
+              
+             
+              <div ng-view></div>
+              <!-- <div ng-view></div> -->
+    <script src="index.js"></script>
+</body>
+</html>
